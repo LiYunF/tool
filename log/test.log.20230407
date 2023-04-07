@@ -1,0 +1,18 @@
+time=2023-04-07T20:28:30.181+08:00 level="[ ERROR ]" msg=hh !BADKEY=asd param="{\"hh\"}%!(EXTRA string=source, string=C:/Users/76270/Documents/GitHub/tool/main.go:13 func name:main.main)"
+time=2023-04-07T20:30:30.720+08:00 level="[ ERROR ]" msg=hh !BADKEY=asd param="{10}%!(EXTRA string=source, string=C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main)"
+time=2023-04-07T20:32:08.026+08:00 level="[ ERROR ]" msg=hh err=asd param="{10}%!(EXTRA string=source, string=C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main)"
+time=2023-04-07T20:32:42.662+08:00 level="[ ERROR ]" msg=hh err=asd param={10} source="C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main"
+time=2023-04-07T20:33:50.425+08:00 level="[ ERROR ]" msg=hh err=asd param={10} source="C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main"
+time=2023-04-07T20:35:38.339+08:00 level="[ ERROR ]" msg=hh "\terr"=asd "\tparam"={10} "\tsource"="C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main"
+time=2023-04-07T20:35:58.915+08:00 level="[ ERROR ]" msg=hh "       err"=asd "       param"={10} "       source"="C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main"
+time=2023-04-07T20:37:53.928+08:00 level="[ ERROR ]" msg=hh "  "="  " err=asd "  "="  " param={10} "  "="  " source="C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main"
+{"time":"2023-04-07T20:40:54.5340556+08:00","level":"[ ERROR ]","msg":"hh","  ":"  ","err":"asd","  ":"  ","param":"{10}","  ":"  ","source":"C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main"}
+{"time":"2023-04-07T20:41:32.1093101+08:00","level":"[ ERROR ]","msg":"hh","=":"=","err":"asd","=":"=","param":"{10}","=":"=","source":"C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main"}
+time=2023-04-07T20:41:54.346+08:00 level="[ ERROR ]" msg=hh "="="=" err=asd "="="=" param={10} "="="=" source="C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main"
+time=2023-04-07T20:42:33.498+08:00 level="[ ERROR ]" msg=hh |err=asd |param={10} |source="C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main"
+time=2023-04-07T20:42:58.182+08:00 level="[ ERROR ]" msg=hh "|| err"=asd "|| param"={10} "|| source"="C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main"
+time=2023-04-07T20:43:07.818+08:00 level="[ ERROR ]" msg=hh ||err=asd ||param={10} ||source="C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main"
+time=2023-04-07T20:45:02.274+08:00 level="[ ERROR ]" msg=hh err=asd param={10} (source="C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main)"
+time=2023-04-07T20:46:16.421+08:00 level="[ ERROR ]" msg=hh err=asd param={10} (source="C:/Users/76270/Documents/GitHub/tool/main.go:14 func name:main.main)"
+time=2023-04-07T20:50:02.309+08:00 level="[ ERROR ]" msg=code:20000 !BADKEY=hhh param={10} (source="C:/Users/76270/Documents/GitHub/tool/main.go:15 func name:main.main)"
+time=2023-04-07T20:50:27.430+08:00 level="[ ERROR ]" msg=code:20000 err=hhh param={10} (source="C:/Users/76270/Documents/GitHub/tool/main.go:15 func name:main.main)"
