@@ -1,4 +1,4 @@
-package database
+package pool
 
 import (
 	"context"
@@ -27,7 +27,7 @@ func InitRedisConnect(addr, password string) error {
 }
 
 // InitRedisDataByMysql 初始化redis data
-func InitRedisDataByMysql(username, password, host, database, tablename, column string) error {
+func InitRedisDataByMysql(username, password, host, database, tableName, column, redisKeyName string) error {
 	if RedisClient == nil {
 		return errors.New("you need to Init redis connect first")
 	}
@@ -39,8 +39,15 @@ func InitRedisDataByMysql(username, password, host, database, tablename, column 
 		return errors.New("connect mysql fail" + err.Error())
 	}
 	var ippool []string
-	sql := fmt.Sprintf("select %v from %v", column, tablename)
-	db.Select(&ippool, sql)
-	fmt.Println(ippool)
+	sql := fmt.Sprintf("select %v from %v", column, tableName)
+	if err := db.Select(&ippool, sql); err != nil {
+		return errors.New("select mysql fail" + err.Error())
+	}
+	//fmt.Println(ippool)
+	for _, e := range ippool {
+		if err := AddDataToZSet(redisKeyName, e, 0.0); err != nil {
+			return errors.New("set data to zset fail:" + e + err.Error())
+		}
+	}
 	return nil
 }
