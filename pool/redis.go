@@ -41,18 +41,17 @@ func IncrData(key, member string, incr float64) error {
 // GetTop1Ip 获取最小使用次数的ip,并将使用次数+1
 func GetTop1Ip(key string) (string, error) {
 	key = key + ZSetKey
-	res, err := RedisClient.ZRange(context.Background(), key, 0, 0).Result()
+	res, err := RedisClient.ZRange(context.Background(), key, 0, int64(QuarterIpNumber)).Result()
+
 	if err != nil {
 		return "", err
-	}
-	if err == redis.Nil {
+	} else if err == redis.Nil {
 		return "", errors.New("GetTop1Ip err:not find:" + key)
-	}
-	//fmt.Println(res)
-	if res == nil {
+	} else if res == nil {
 		return "", errors.New("redis key is nil")
 	}
-	mem := res[0]
+	mem := res[Random.Intn(QuarterIpNumber)]
+
 	if err := IncrData(key, mem, 1.0); err != nil {
 		return "", errors.New("IncrData error" + err.Error())
 	}
