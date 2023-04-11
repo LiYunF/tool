@@ -1,9 +1,11 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	_ "github.com/LiYunF/tool/logger"
 	"github.com/LiYunF/tool/pool"
+	"golang.org/x/time/rate"
 	"sync"
 	"time"
 )
@@ -24,8 +26,13 @@ func main() {
 		panic(err)
 	}
 	wg := sync.WaitGroup{}
-	for i := 0; i < 4000; i++ {
+	limit := rate.Every(time.Second) // 每秒一个
+	limiter := rate.NewLimiter(limit, 10)
+	q := time.Now()
+	fmt.Println(q)
+	for i := 0; i < 100; i++ {
 		wg.Add(1)
+		_ = limiter.Wait(context.TODO())
 		go func() {
 			defer wg.Done()
 
@@ -38,6 +45,8 @@ func main() {
 		}()
 	}
 	wg.Wait()
+	q = time.Now()
+	fmt.Println(q)
 
 	//res, err := pool.GetTop1Ip(key)
 	//if err != nil {

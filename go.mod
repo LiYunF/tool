@@ -8,6 +8,7 @@ require (
 	github.com/jmoiron/sqlx v1.3.5
 	github.com/lestrrat/go-file-rotatelogs v0.0.0-20180223000712-d3151e2a480f
 	golang.org/x/exp v0.0.0-20230321023759-10a507213a29
+	golang.org/x/time v0.3.0
 )
 
 require (

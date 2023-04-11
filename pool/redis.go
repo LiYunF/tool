@@ -57,3 +57,24 @@ func GetTop1Ip(key string) (string, error) {
 	}
 	return mem, nil
 }
+
+// GetAllIp 获取全部Ip
+func GetAllIp(key string) (*[]string, error) {
+	key = key + ZSetKey
+	//获取全部Ip
+	res, err := RedisClient.ZRange(context.Background(), key, 0, -1).Result()
+	if err != nil {
+		return nil, err
+	} else if err == redis.Nil {
+		return nil, errors.New("GetTop1Ip err:not find:" + key)
+	} else if res == nil {
+		return nil, errors.New("redis key is nil")
+	}
+	resStr := make([]string, len(res))
+
+	for i, e := range res {
+		resStr[i] = e
+	}
+	return &resStr, nil
+
+}
