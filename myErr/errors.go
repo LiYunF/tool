@@ -20,7 +20,7 @@ var (
 )
 
 func (e *MyError) Error() string {
-	return fmt.Sprintf("MyError:{code :%v|err :%v", e.Code, e.Msg)
+	return fmt.Sprintf("MyError:{code :%v|err :%v}", e.Code, e.Msg)
 }
 func CreateError(code int, msg string, data interface{}) *MyError {
 	return &MyError{
