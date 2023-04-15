@@ -1,5 +1,7 @@
 package errors
 
+import "fmt"
+
 type MyError struct {
 	Code int
 	Msg  string
@@ -18,7 +20,7 @@ var (
 )
 
 func (e *MyError) Error() string {
-	return e.Msg
+	return fmt.Sprintf("MyError:{code :%v|err :%v", e.Code, e.Msg)
 }
 func CreateError(code int, msg string, data interface{}) *MyError {
 	return &MyError{
